@@ -1,8 +1,10 @@
-package com.fiapsacbot;
+package br.edu.fiap.fiapsacbot;
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import br.edu.fiap.fiapsacbot.servico.FiapSacBot;
 
 public class Main {
 
