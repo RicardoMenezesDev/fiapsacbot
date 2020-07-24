@@ -12,7 +12,6 @@ public class FluxoMensagem {
 		DicionarioSinonimos dicionarioSinonimos = new DicionarioSinonimos();
 		String nomeCliente = update.getMessage().getFrom().getFirstName();
 		String palavraOrigem = update.getMessage().getText();
-		 
 		
 		if(	palavraOrigem.equals("/start")) {
 			return mensagemInicial(nomeCliente);
