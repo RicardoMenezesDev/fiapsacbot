@@ -8,7 +8,7 @@ import br.edu.fiap.fiapsacbot.aula.AulaServico;
 import br.edu.fiap.fiapsacbot.configuracao.MensagemEnum;
 
 public class FluxoMensagem {
-	
+
     public String respostaFiap(Update update) {
         DicionarioSinonimos dicionarioSinonimos = new DicionarioSinonimos();
         AulaServico aulaServico = new AulaServico();
@@ -16,14 +16,14 @@ public class FluxoMensagem {
         String palavraOrigem = update.getMessage().getText();
         String topico = dicionarioSinonimos.sinonimoPalavra(palavraOrigem.toLowerCase());
 
-        if(topico.contains("/start")) {
-        	return mensagemInicial(nomeCliente); 
+        if (topico.contains("/start")) {
+            return mensagemInicial(nomeCliente);
         }
-        
-        if(topico.contains("aula")) {
-        	return aulaServico.respostaAulasFiap(topico); 
-        }  
-        
+
+        if (topico.contains("aula")) {
+            return aulaServico.respostaAulasFiap(topico);
+        }
+
         return mensagemInsucesso(nomeCliente);
 //        switch (topico) {
 //            case "/start":

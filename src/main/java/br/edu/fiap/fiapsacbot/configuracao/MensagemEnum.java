@@ -1,9 +1,9 @@
 package br.edu.fiap.fiapsacbot.configuracao;
 
 public enum MensagemEnum {
-    BEM_VINDO("\nSeja bem vindo(a) ao Servi?o de Atendimento da FIAP."),
+    BEM_VINDO("\nSeja bem vindo(a) ao Serviço de Atendimento da FIAP."),
     BEM_VINDO_AJUDA("\nComo podemos ajudar?"),
-    OPCOES("\nPara facilitar seu atendimento consulte as op??es abaixo:\n" +
+    OPCOES("\nPara facilitar seu atendimento consulte as opções abaixo:\n" +
             "\n - AULAS" +
             "\n - APOSTILAS" +
             "\n - CALEND?RIO DE AULAS" +
@@ -14,7 +14,7 @@ public enum MensagemEnum {
             "\n - DISCIPLINAS" +
             "\n - NOTAS"),
     MATRICULA("\nInforme sua matrícula para iniciar o atendimento."),
-    NAO_ENTENDI(" Desculpe, não foi possível realizar sua solicitação. Informe uma das opções abaixo para proseguir com o atendimento." +
+    NAO_ENTENDI(" Desculpe, não foi possível realizar sua solicitação. Informe uma das opções abaixo para prosseguir com o atendimento." +
             "\n - AULAS" +
             "\n - APOSTILAS" +
             "\n - CALEND?RIO DE AULAS" +
