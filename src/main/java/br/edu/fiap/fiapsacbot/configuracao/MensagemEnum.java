@@ -6,7 +6,7 @@ public enum MensagemEnum {
     OPCOES("\nPara facilitar seu atendimento consulte as opções abaixo:\n" +
             "\n - AULAS" +
             "\n - APOSTILAS" +
-            "\n - CALEND?RIO DE AULAS" +
+            "\n - CALENDÁRIO DE AULAS" +
             "\n - ENTREGA DE TRABALHOS" +
             "\n - BOLETO" +
             "\n - ALTERAR SENHA" +
@@ -17,13 +17,14 @@ public enum MensagemEnum {
     NAO_ENTENDI(" Desculpe, não foi possível realizar sua solicitação. Informe uma das opções abaixo para prosseguir com o atendimento." +
             "\n - AULAS" +
             "\n - APOSTILAS" +
-            "\n - CALEND?RIO DE AULAS" +
+            "\n - CALENDÁRIO DE AULAS" +
             "\n - ENTREGA DE TRABALHOS" +
             "\n - BOLETO" +
             "\n - ALTERAR SENHA" +
             "\n - PROFESSORES" +
             "\n - DISCIPLINAS" +
-            "\n - NOTAS");
+            "\n - NOTAS"),
+	TRANSFERENCIA_CHAT_HUMANO("Oh! Para compreender melhor e te ajudar estou transferido a nossa conversa para um chat humano, já já alguém te responde, sucesso.");
 
     private final String descricao;
 

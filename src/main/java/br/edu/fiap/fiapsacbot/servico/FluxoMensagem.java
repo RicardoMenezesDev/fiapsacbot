@@ -4,12 +4,13 @@ import java.util.Calendar;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import br.edu.fiap.fiapsacbot.aluno.Aluno;
 import br.edu.fiap.fiapsacbot.aula.AulaServico;
 import br.edu.fiap.fiapsacbot.configuracao.MensagemEnum;
 
 public class FluxoMensagem {
 	
-    public String respostaFiap(Update update) {
+    public String respostaFiap(Update update, Aluno aluno) {
         DicionarioSinonimos dicionarioSinonimos = new DicionarioSinonimos();
         AulaServico aulaServico = new AulaServico();
         String nomeCliente = update.getMessage().getFrom().getFirstName();
@@ -24,15 +25,7 @@ public class FluxoMensagem {
         	return aulaServico.respostaAulasFiap(topico); 
         }  
         
-        return mensagemInsucesso(nomeCliente);
-//        switch (topico) {
-//            case "/start":
-//                return mensagemInicial(nomeCliente);
-//            case "aula": //AULA
-//                return aulaServico.respostaAulasFiap(topico);
-//            default:
-//                return mensagemInsucesso(nomeCliente);
-//        }
+        return mensagemInsucesso(nomeCliente, aluno);
     }
 
     private String mensagemInicial(String nomeCliente) {
@@ -51,7 +44,8 @@ public class FluxoMensagem {
         return String.format("%s, %s!\n%s\n%s", periodo, nomeCliente, MensagemEnum.BEM_VINDO_AJUDA.getDescricao(), MensagemEnum.OPCOES.getDescricao());
     }
 
-    private String mensagemInsucesso(String nomeCliente) {
+    private String mensagemInsucesso(String nomeCliente, Aluno aluno) {
+    	aluno.setNumeroInteracoesInsucesso(aluno.getNumeroInteracoesInsucesso() + 1);
         return nomeCliente + MensagemEnum.NAO_ENTENDI.getDescricao();
     }
 }
