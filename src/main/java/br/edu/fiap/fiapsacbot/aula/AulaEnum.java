@@ -1,7 +1,7 @@
 package br.edu.fiap.fiapsacbot.aula;
 
 public enum AulaEnum {
-	AULA("Preciamos de mais informações, seguem as opções para facilitar:\n" +
+	AULA("Precisamos de mais informações, seguem as opções para facilitar:\n" +
 			"\n- Na semana" + 
 			"\n- No final de semana" + 
 			"\n- Pendentes" + 

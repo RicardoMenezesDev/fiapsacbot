@@ -1,7 +1,7 @@
 package br.edu.fiap.fiapsacbot.aula;
 
 public class AulaServico {
-	
+
 	public String respostaAulasFiap(String pergunta) {
 		switch (pergunta) {
 		case "aula.semana":
