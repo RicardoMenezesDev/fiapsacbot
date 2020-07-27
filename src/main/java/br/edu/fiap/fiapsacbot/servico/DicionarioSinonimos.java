@@ -28,13 +28,21 @@ public class DicionarioSinonimos {
 			return "aula.professores";
 		}
 		
+		if (palavraOrigem.equals("rafael matsuyama")) {
+			return "aula.professores.rafael";
+		}		
+		
 		if (palavraOrigem.equals("presença")) {
 			return "aula.presenca";
 		}		
 
 		if (palavraOrigem.equals("notas")) {
 			return "aula.notas";
-		}		
+		}
+		
+		if (palavraOrigem.equals("javaplataform")) {
+			return "aulas.notas.javaplataform";
+		}
 		
 		return palavraOrigem;
 	}

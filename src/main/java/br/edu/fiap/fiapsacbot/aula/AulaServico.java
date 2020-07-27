@@ -12,10 +12,14 @@ public class AulaServico {
 			return AulaEnum.PENDENTES.getDescricao();
 		case "aula.professores":
 			return AulaEnum.PROFESSORES.getDescricao();
+		case "aula.professores.rafael":
+			return AulaEnum.RAFAEL.getDescricao();			
 		case "aula.presenca":
 			return AulaEnum.PRESENCA.getDescricao();
 		case "aula.notas":
 			return AulaEnum.NOTA.getDescricao();
+		case "aulas.notas.javaplataform":
+			return AulaEnum.JAVA.getDescricao();
 		default:
 			return AulaEnum.AULA.getDescricao();
 		}
