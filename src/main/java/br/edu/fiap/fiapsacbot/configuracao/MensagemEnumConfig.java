@@ -1,6 +1,6 @@
 package br.edu.fiap.fiapsacbot.configuracao;
 
-public enum MensagemEnum {
+public enum MensagemEnumConfig {
     BEM_VINDO("\nSeja bem vindo(a) ao Serviço de Atendimento da FIAP."),
     BEM_VINDO_AJUDA("\nComo podemos ajudar?"),
     OPCOES("\nPara facilitar seu atendimento consulte as opções abaixo:\n" +
@@ -28,7 +28,7 @@ public enum MensagemEnum {
 
     private final String descricao;
 
-    MensagemEnum(String descricao) {
+    MensagemEnumConfig(String descricao) {
         this.descricao = descricao;
     }
 

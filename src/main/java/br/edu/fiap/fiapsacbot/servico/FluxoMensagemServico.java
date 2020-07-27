@@ -6,13 +6,16 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import br.edu.fiap.fiapsacbot.aluno.Aluno;
 import br.edu.fiap.fiapsacbot.aula.AulaServico;
-import br.edu.fiap.fiapsacbot.configuracao.MensagemEnum;
+import br.edu.fiap.fiapsacbot.aula.calendario.AulaCalendarioServico;
+import br.edu.fiap.fiapsacbot.configuracao.MensagemEnumConfig;
 
-public class FluxoMensagem {
+public class FluxoMensagemServico {
 	
     public String respostaFiap(Update update, Aluno aluno) {
-        DicionarioSinonimos dicionarioSinonimos = new DicionarioSinonimos();
+        DicionarioSinonimosServico dicionarioSinonimos = new DicionarioSinonimosServico();
         AulaServico aulaServico = new AulaServico();
+        AulaCalendarioServico aulaCalendarioServico = new AulaCalendarioServico();
+        
         String nomeCliente = update.getMessage().getFrom().getFirstName();
         String palavraOrigem = update.getMessage().getText();
         String topico = dicionarioSinonimos.sinonimoPalavra(palavraOrigem.toLowerCase());
@@ -21,9 +24,14 @@ public class FluxoMensagem {
         	return mensagemInicial(nomeCliente); 
         }
         
+        
+        if(topico.contains("calendario.aula")) {
+        	return aulaCalendarioServico.respostaAulasCalendarioFiap(topico); 
+        }
+        
         if(topico.contains("aula")) {
         	return aulaServico.respostaAulasFiap(topico); 
-        }  
+        }
         
         return mensagemInsucesso(nomeCliente, aluno);
     }
@@ -41,11 +49,11 @@ public class FluxoMensagem {
             periodo = "Boa noite";
         }
 
-        return String.format("%s, %s!\n%s\n%s", periodo, nomeCliente, MensagemEnum.BEM_VINDO_AJUDA.getDescricao(), MensagemEnum.OPCOES.getDescricao());
+        return String.format("%s, %s!\n%s\n%s", periodo, nomeCliente, MensagemEnumConfig.BEM_VINDO_AJUDA.getDescricao(), MensagemEnumConfig.OPCOES.getDescricao());
     }
 
     private String mensagemInsucesso(String nomeCliente, Aluno aluno) {
     	aluno.setNumeroInteracoesInsucesso(aluno.getNumeroInteracoesInsucesso() + 1);
-        return nomeCliente + MensagemEnum.NAO_ENTENDI.getDescricao();
+        return nomeCliente + MensagemEnumConfig.NAO_ENTENDI.getDescricao();
     }
 }

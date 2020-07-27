@@ -1,8 +1,8 @@
 package br.edu.fiap.fiapsacbot.servico;
 
-public class DicionarioSinonimos {
+public class DicionarioSinonimosServico {
 
-	public DicionarioSinonimos() {
+	public DicionarioSinonimosServico() {
 	}
 
 	public String sinonimoPalavra(String palavraOrigem) {
@@ -42,6 +42,18 @@ public class DicionarioSinonimos {
 		
 		if (palavraOrigem.equals("javaplataform")) {
 			return "aulas.notas.javaplataform";
+		}
+		
+		if(palavraOrigem.equals("grade de aulas")) {
+			return "calendario.aula";
+		}
+		
+		if(palavraOrigem.equals("matérias")) {
+			return "calendario.aula.materias";
+		}
+		
+		if(palavraOrigem.equals("professor")) {
+			return "calendario.aula.professor";
 		}
 		
 		return palavraOrigem;

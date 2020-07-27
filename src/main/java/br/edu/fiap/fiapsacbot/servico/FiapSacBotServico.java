@@ -10,13 +10,13 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import br.edu.fiap.fiapsacbot.aluno.Aluno;
-import br.edu.fiap.fiapsacbot.configuracao.MensagemEnum;
-import br.edu.fiap.fiapsacbot.configuracao.TelegramEnum;
+import br.edu.fiap.fiapsacbot.configuracao.MensagemEnumConfig;
+import br.edu.fiap.fiapsacbot.configuracao.TelegramEnumConfig;
 
-public class FiapSacBot extends TelegramLongPollingBot {
+public class FiapSacBotServico extends TelegramLongPollingBot {
 
-    private MensagemValidacao mensagemValidacao = new MensagemValidacao();
-    private FluxoMensagem fluxoMensagem = new FluxoMensagem();
+    private MensagemServico mensagemValidacao = new MensagemServico();
+    private FluxoMensagemServico fluxoMensagem = new FluxoMensagemServico();
     private List<Aluno> alunos = new ArrayList<Aluno>();
     private String mensagemInsucesso;
     private Long numeroTentativasMax = 2L;
@@ -49,11 +49,11 @@ public class FiapSacBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return TelegramEnum.USUARIO.getDescricao();
+        return TelegramEnumConfig.USUARIO.getDescricao();
     }
 
     public String getBotToken() {
-        return TelegramEnum.TOKEN.getDescricao();
+        return TelegramEnumConfig.TOKEN.getDescricao();
     }
     
 	private Boolean controleAcesso(Update update) {
@@ -71,7 +71,7 @@ public class FiapSacBot extends TelegramLongPollingBot {
 				}
 				
 				if (aluno.getNumeroInteracoesInsucesso().longValue() == numeroTentativasMax) {
-					this.mensagemInsucesso = MensagemEnum.TRANSFERENCIA_CHAT_HUMANO.getDescricao();
+					this.mensagemInsucesso = MensagemEnumConfig.TRANSFERENCIA_CHAT_HUMANO.getDescricao();
 					alunoRemovido = aluno;
 					return false;
 				}
