@@ -1,4 +1,4 @@
-package br.edu.fiap.fiapsacbot.aula;
+package br.edu.fiap.fiapsacbot.boleto;
 
 public enum BoletoEnum {
     BOLETO("Escolha um dos serviços disponíveis:\n" +

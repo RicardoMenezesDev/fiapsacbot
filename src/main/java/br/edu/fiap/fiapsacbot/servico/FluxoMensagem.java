@@ -2,9 +2,9 @@ package br.edu.fiap.fiapsacbot.servico;
 
 import java.util.Calendar;
 
-import br.edu.fiap.fiapsacbot.aula.BoletoServico;
-import br.edu.fiap.fiapsacbot.aula.DisciplinaServico;
-import br.edu.fiap.fiapsacbot.aula.TrabalhoServico;
+import br.edu.fiap.fiapsacbot.boleto.BoletoServico;
+import br.edu.fiap.fiapsacbot.disciplina.DisciplinaServico;
+import br.edu.fiap.fiapsacbot.trabalho.TrabalhoServico;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import br.edu.fiap.fiapsacbot.aula.AulaServico;

@@ -1,4 +1,4 @@
-package br.edu.fiap.fiapsacbot.aula;
+package br.edu.fiap.fiapsacbot.boleto;
 
 public class BoletoServico {
     public String respostaAulasFiap(String pergunta) {
