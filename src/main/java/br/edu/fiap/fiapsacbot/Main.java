@@ -5,7 +5,7 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.updates.GetUpdates;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import br.edu.fiap.fiapsacbot.servico.FiapSacBot;
+import br.edu.fiap.fiapsacbot.servico.FiapSacBotServico;
 import org.telegram.telegrambots.meta.generics.BotSession;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
@@ -16,7 +16,7 @@ public class Main {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
 
         try {
-            telegramBotsApi.registerBot(new FiapSacBot());
+            telegramBotsApi.registerBot(new FiapSacBotServico());
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

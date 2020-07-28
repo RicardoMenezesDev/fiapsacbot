@@ -1,20 +1,21 @@
 package br.edu.fiap.fiapsacbot.aula;
 
 public enum AulaEnum {
-    AULA("Precisamos de mais informações, seguem as opções para facilitar:\n" +
-            "\n- Na semana" +
-            "\n- No final de semana" +
-            "\n- Pendentes" +
-            "\n- Professores" +
-            "\n- Presença" +
-            "\n- Notas"),
-    FINAL_SEMANA("Haverá aula no dia 25/07/2020."),
-    NOTA("Qual a matéria você gostaria de saber as notas?"),
-    PENDENTES("Faltam 3 aulas para a conclusão do curso."),
-    PROFESSORES("De qual professor você precisa saber?."),
-    PRESENCA("Você frequentou 95% dessas aulas. Possuí 1 falta."),
-    SEMANA("Haveram 2 aulas esta semana.");
-
+	AULA("Precisamos de mais informações, seguem as opções para facilitar:\n" +
+			"\n- Na semana" + 
+			"\n- No final de semana" + 
+			"\n- Pendentes" + 
+			"\n- Professores" +
+			"\n- Presença" +
+			"\n- Notas"),
+	FINAL_SEMANA("Haverá aula no dia 25/07/2020."),
+	JAVA("Sua nota nesta matéria é 8,75."),
+	NOTA("Qual a matéria você gostaria de saber as notas?"),
+	PENDENTES("Faltam 3 aulas para a conclusão do curso."),
+	PROFESSORES("De qual professor você precisa saber?."),
+	PRESENCA("Você frequentou 95% dessas aulas. Possuí 1 falta."),
+	RAFAEL("Você terá aulas com o professor Rafael Matsuyama nos dias 27/07/2020, 29/07/2020."),
+	SEMANA("Haveram 2 aulas esta semana.");
 
     private final String descricao;
 
