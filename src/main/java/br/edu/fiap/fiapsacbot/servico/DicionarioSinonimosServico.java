@@ -44,11 +44,16 @@ public class DicionarioSinonimosServico {
 			return "aulas.notas.javaplataform";
 		}
 		
-		if(palavraOrigem.equals("grade de aulas")) {
+		if(palavraOrigem.equals("grades de aulas") || 
+				palavraOrigem.equals("grade de aulas") || 
+				palavraOrigem.equals("calendario de aulas") ||
+				palavraOrigem.equals("calendário de aulas") ||
+				palavraOrigem.equals("calendario de aula") ||
+				palavraOrigem.equals("calendário de aula") ) {
 			return "calendario.aula";
 		}
 		
-		if(palavraOrigem.equals("matérias")) {
+		if(palavraOrigem.equals("matérias") || palavraOrigem.equals("materias")) {
 			return "calendario.aula.materias";
 		}
 		
