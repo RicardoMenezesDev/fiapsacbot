@@ -24,7 +24,6 @@ public class FluxoMensagemServico {
         String palavraOrigem = update.getMessage().getText();
         String topico = dicionarioSinonimos.sinonimoPalavra(palavraOrigem.toLowerCase());
 
-        AulaServico aulaServico = new AulaServico();
         ApostilaServico apostilaServico = new ApostilaServico();
         BoletoServico boletoServico = new BoletoServico();
         DisciplinaServico disciplinaServico = new DisciplinaServico();
