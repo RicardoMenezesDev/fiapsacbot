@@ -15,7 +15,7 @@ public enum DisciplinaEnum {
     APROVADAS("Segue abaixo uma lista das disciplinas concluídas:" +
             "\n- Cloud" +
             "\n- Devops" ),
-    PENDENTE("Segue abaixo uma lista das disciplinas concluídas:" +
+    PENDENTE("Segue abaixo uma lista das disciplinas pendentes:" +
             "\n- Persistence" +
             "\n- Design Thinking" +
             "\n- Java Plataform" +

@@ -8,19 +8,22 @@ import br.edu.fiap.fiapsacbot.trabalho.TrabalhoServico;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import br.edu.fiap.fiapsacbot.aula.AulaServico;
+import br.edu.fiap.fiapsacbot.apostila.ApostilaServico;
 import br.edu.fiap.fiapsacbot.configuracao.MensagemEnum;
 
 public class FluxoMensagem {
 
     public String respostaFiap(Update update) {
         DicionarioSinonimos dicionarioSinonimos = new DicionarioSinonimos();
-        AulaServico aulaServico = new AulaServico();
-        BoletoServico boletoServico = new BoletoServico();
-        DisciplinaServico disciplinaServico = new DisciplinaServico();
-        TrabalhoServico trabalhoServico = new TrabalhoServico();
         String nomeCliente = update.getMessage().getFrom().getFirstName();
         String palavraOrigem = update.getMessage().getText();
         String topico = dicionarioSinonimos.sinonimoPalavra(palavraOrigem.toLowerCase());
+
+        AulaServico aulaServico = new AulaServico();
+        ApostilaServico apostilaServico = new ApostilaServico();
+        BoletoServico boletoServico = new BoletoServico();
+        DisciplinaServico disciplinaServico = new DisciplinaServico();
+        TrabalhoServico trabalhoServico = new TrabalhoServico();
 
         if (topico.contains("/start")) {
             return mensagemInicial(nomeCliente);
@@ -30,20 +33,22 @@ public class FluxoMensagem {
             return aulaServico.respostaAulasFiap(topico);
         }
 
- /*       switch (topico) {
-            case "/start":
-                return mensagemInicial(nomeCliente);
-            case "aula": //AULA
-                return aulaServico.respostaAulasFiap(topico);
-            case "boleto": //BOLETO
-                return boletoServico.respostaAulasFiap(topico);
-            case "trabalho": //TRABALHO
-                return trabalhoServico.respostaAulasFiap(topico);
-            case "disciplina": //TRABALHO
-                return disciplinaServico.respostaAulasFiap(topico);
-            default:
-                return mensagemInsucesso(nomeCliente);
-        }*/
+        if (topico.contains("apostila")) {
+            return apostilaServico.respostaApostilaFiap(topico);
+        }
+
+        if (topico.contains("boleto")) {
+            return boletoServico.respostaAulasFiap(topico);
+        }
+
+        if (topico.contains("trabalho")) {
+            return trabalhoServico.respostaAulasFiap(topico);
+        }
+
+        if (topico.contains("disciplina")) {
+            return disciplinaServico.respostaAulasFiap(topico);
+        }
+
         return mensagemInsucesso(nomeCliente);
     }
 
